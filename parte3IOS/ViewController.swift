@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var captureSession: AVCaptureSession?
     var rearCamera: AVCaptureDevice?
     var rearCameraInput: AVCaptureDeviceInput?
+    var movieCaptureOutput = AVCaptureMovieFileOutput()
     var videoPreviewOutput: AVCaptureVideoDataOutput?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var viewAnimator: ViewAnimator?
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
     
     func configureSession() {
         self.captureSession = AVCaptureSession()
+        self.captureSession?.sessionPreset = AVCaptureSession.Preset.cif352x288
         let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         self.rearCamera = session.devices.first
 
@@ -84,19 +86,24 @@ class ViewController: UIViewController {
             
             // then add the layer to your current view
             self.photoContainerView.layer.insertSublayer(self.videoPreviewLayer!, at: 0)
-            self.videoPreviewLayer?.frame = self.photoContainerView.frame
+            self.videoPreviewLayer?.frame = self.photoContainerView.bounds
         }
         
         self.videoPreviewOutput = AVCaptureVideoDataOutput()
+        videoPreviewOutput?.alwaysDiscardsLateVideoFrames = true
         videoPreviewOutput!.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable: Int(kCVPixelFormatType_32BGRA)] as! [String : Any]
         self.videoPreviewOutput!.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
         
-        // always make sure the AVCaptureSession can accept the selected output
         if captureSession?.canAddOutput(self.videoPreviewOutput!) ?? false {
-            
-            // add the output to the current session
             captureSession?.addOutput(self.videoPreviewOutput!)
+            print("oi")
         }
+        
+//        if captureSession?.canAddOutput(self.movieCaptureOutput) ?? false {
+//            captureSession?.addOutput(self.movieCaptureOutput)
+//            print("adicionado")
+//        }
+        
         guard let connection = videoPreviewOutput?.connection(with: .video) else { return }
         guard connection.isVideoOrientationSupported else { return }
         guard connection.isVideoMirroringSupported else { return }
@@ -108,7 +115,7 @@ class ViewController: UIViewController {
    
     func display(image: UIImage) {
         
-        var newImage = UIImage()
+        var newImage = image
         
         switch self.option {
         case .contrast:
@@ -126,10 +133,20 @@ class ViewController: UIViewController {
         case .grayScale:
             newImage = OpenCVWrapper.toGray(image)
         case .startRecording:
+            
+            let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let url =  urls.first!.appendingPathComponent("output.mov")
+            if !movieCaptureOutput.isRecording {
+                movieCaptureOutput.startRecording(to: url, recordingDelegate: self)
+            }
             //newImage = OpenCVWrapper.
             break
         case .stopRecording:
-            //newImage = OpenCVWrapper.contrast(image, alpha: 0.5)
+            
+            if movieCaptureOutput.isRecording {
+                movieCaptureOutput.stopRecording()
+            }
+            
             break
         case .sobel:
             newImage = OpenCVWrapper.sobel(image)
@@ -160,15 +177,25 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return }
         let image = UIImage(cgImage: cgImage)
         
-        display(image: image)
-//        DispatchQueue.main.async { [unowned self] in
-//            self.imageView.image = OpenCVWrapper.rotate(image)
-//        }
+        //display(image: image)
+        DispatchQueue.main.async { [unowned self] in
+            self.imageView.image = OpenCVWrapper.resize(image)
+        }
     }
     
 }
 extension ViewController: ControlVCDelegate {
     func didSelect(option: MenuOption) {
         self.option = option
+    }
+}
+extension ViewController: AVCaptureFileOutputRecordingDelegate {
+    func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
+        print("que comece a gravacao")
+    }
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        if error == nil {
+            UISaveVideoAtPathToSavedPhotosAlbum(outputFileURL.path, nil, nil, nil)
+        }
     }
 }

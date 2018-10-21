@@ -25,5 +25,6 @@
 + (UIImage *)flipVertical:(UIImage *)source;
 + (UIImage *)flipHorizontal:(UIImage *)source;
 + (UIImage *)rotate:(UIImage *)source;
++ (UIImage *)resize:(UIImage *)source;
 
 @end

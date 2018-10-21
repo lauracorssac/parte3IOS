@@ -165,6 +165,9 @@ using namespace cv;
 + (UIImage *)rotate:(UIImage *)source {
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _rotate: [OpenCVWrapper _matFrom:source]]];
 }
++ (UIImage *)resize:(UIImage *)source {
+    return [OpenCVWrapper _imageFrom: [OpenCVWrapper _resize: [OpenCVWrapper _matFrom:source]]];
+}
 
 + (Mat)_grayFrom:(Mat)source {
    
@@ -222,6 +225,11 @@ using namespace cv;
 + (Mat)_rotate:(Mat)source {
     
     cv::rotate(source, result, ROTATE_90_CLOCKWISE);
+    return result;
+}
++ (Mat)_resize:(Mat)source {
+    
+    cv::resize(source, result, cv::Size(source.size[0] / 2, source.size[1]/ 2));
     return result;
 }
 

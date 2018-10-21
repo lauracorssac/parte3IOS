@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,12 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-cw-Mat">
-                                <rect key="frame" x="0.0" y="20" width="375" height="313.5"/>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-cw-Mat">
+                                <rect key="frame" x="11.5" y="20" width="352" height="288"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="Iug-GQ-5a5"/>
+                                    <constraint firstAttribute="width" constant="352" id="cgk-DX-fZM"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whx-fW-e5a">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="293.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whx-fW-e5a">
+                                <rect key="frame" x="11.5" y="339" width="352" height="288"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xai-dK-Rzf">
                                 <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
@@ -45,14 +48,12 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Xai-dK-Rzf" secondAttribute="bottom" id="18v-zB-CRK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="whx-fW-e5a" secondAttribute="bottom" constant="40" id="28C-Kz-B3v"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W2r-cw-Mat" secondAttribute="trailing" id="2Dc-XS-Ohq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="whx-fW-e5a" secondAttribute="trailing" id="TEE-LD-3WS"/>
-                            <constraint firstItem="whx-fW-e5a" firstAttribute="top" secondItem="W2r-cw-Mat" secondAttribute="bottom" id="TKA-JM-GvO"/>
+                            <constraint firstItem="whx-fW-e5a" firstAttribute="width" secondItem="W2r-cw-Mat" secondAttribute="width" id="38n-Vv-CW9"/>
+                            <constraint firstItem="whx-fW-e5a" firstAttribute="centerX" secondItem="W2r-cw-Mat" secondAttribute="centerX" id="3ih-bI-4dt"/>
+                            <constraint firstItem="whx-fW-e5a" firstAttribute="height" secondItem="W2r-cw-Mat" secondAttribute="height" id="Ia1-2R-utf"/>
                             <constraint firstItem="Xai-dK-Rzf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wbr-MJ-Xc2"/>
-                            <constraint firstItem="W2r-cw-Mat" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cKg-ky-WT4"/>
+                            <constraint firstItem="W2r-cw-Mat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X9Q-Jp-waF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xai-dK-Rzf" secondAttribute="trailing" id="fal-1a-zKp"/>
-                            <constraint firstItem="whx-fW-e5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hJ1-ba-oIc"/>
-                            <constraint firstItem="W2r-cw-Mat" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.5" id="iE5-Mm-Qs9"/>
                             <constraint firstItem="Xai-dK-Rzf" firstAttribute="top" secondItem="Dch-dO-1GZ" secondAttribute="bottom" id="iNg-Cc-MfI"/>
                             <constraint firstItem="W2r-cw-Mat" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oJq-Fk-Gfp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dch-dO-1GZ" secondAttribute="trailing" id="uBH-QM-Ds1"/>
