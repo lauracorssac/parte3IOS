@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D0F70B8217CE61D00741160 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F70B7217CE61D00741160 /* ViewAnimator.swift */; };
+		8D0F70BB217CEA2500741160 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F70B9217CEA2500741160 /* MenuViewController.swift */; };
+		8D0F70BC217CEA2500741160 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0F70BA217CEA2500741160 /* MenuViewController.xib */; };
+		8D469A2C2177780F000D69CD /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D469A2A2177780F000D69CD /* VideoViewController.mm */; };
+		8D469A2D2177780F000D69CD /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D469A2B2177780F000D69CD /* VideoViewController.xib */; };
+		8D469A362178A34B000D69CD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D469A352178A34B000D69CD /* AVFoundation.framework */; };
 		8DA0C9FE2176313000DC868E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C9FD2176313000DC868E /* AppDelegate.swift */; };
 		8DA0CA002176313000DC868E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C9FF2176313000DC868E /* ViewController.swift */; };
 		8DA0CA032176313000DC868E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DA0CA012176313000DC868E /* Main.storyboard */; };
 		8DA0CA052176313400DC868E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DA0CA042176313400DC868E /* Assets.xcassets */; };
 		8DA0CA082176313400DC868E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DA0CA062176313400DC868E /* LaunchScreen.storyboard */; };
+		8DA0CA11217631FF00DC868E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA0CA10217631FF00DC868E /* opencv2.framework */; };
+		8DA0CA13217633F400DC868E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA0CA12217633F400DC868E /* CoreMedia.framework */; };
+		8DA0CA15217633FF00DC868E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA0CA14217633FF00DC868E /* CoreGraphics.framework */; };
+		8DA0CA172176340D00DC868E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA0CA162176340D00DC868E /* CoreFoundation.framework */; };
+		8DA0CA192176341100DC868E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA0CA182176341100DC868E /* Accelerate.framework */; };
+		8DA0CA1D2176365700DC868E /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0CA1C2176365700DC868E /* OpenCVWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D0F70B7217CE61D00741160 /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
+		8D0F70B9217CEA2500741160 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8D0F70BA217CEA2500741160 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8D469A292177780F000D69CD /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		8D469A2A2177780F000D69CD /* VideoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoViewController.mm; sourceTree = "<group>"; };
+		8D469A2B2177780F000D69CD /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		8D469A352178A34B000D69CD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8DA0C9FA2176313000DC868E /* parte3IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parte3IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA0C9FD2176313000DC868E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DA0C9FF2176313000DC868E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,15 @@
 		8DA0CA042176313400DC868E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DA0CA072176313400DC868E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DA0CA092176313400DC868E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DA0CA10217631FF00DC868E /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../../../opencv-opencv-e7c915a/platforms/ios/ios/opencv2.framework"; sourceTree = "<group>"; };
+		8DA0CA12217633F400DC868E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8DA0CA14217633FF00DC868E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8DA0CA162176340D00DC868E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8DA0CA182176341100DC868E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8DA0CA1A2176365700DC868E /* parte3IOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "parte3IOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		8DA0CA1B2176365700DC868E /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		8DA0CA1C2176365700DC868E /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		8DA0CA1E2176375400DC868E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +57,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D469A362178A34B000D69CD /* AVFoundation.framework in Frameworks */,
+				8DA0CA192176341100DC868E /* Accelerate.framework in Frameworks */,
+				8DA0CA172176340D00DC868E /* CoreFoundation.framework in Frameworks */,
+				8DA0CA15217633FF00DC868E /* CoreGraphics.framework in Frameworks */,
+				8DA0CA13217633F400DC868E /* CoreMedia.framework in Frameworks */,
+				8DA0CA11217631FF00DC868E /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D469A28217777F2000D69CD /* VideoController */ = {
+			isa = PBXGroup;
+			children = (
+				8D469A292177780F000D69CD /* VideoViewController.h */,
+				8D469A2A2177780F000D69CD /* VideoViewController.mm */,
+				8D469A2B2177780F000D69CD /* VideoViewController.xib */,
+			);
+			path = VideoController;
+			sourceTree = "<group>";
+		};
 		8DA0C9F12176313000DC868E = {
 			isa = PBXGroup;
 			children = (
 				8DA0C9FC2176313000DC868E /* parte3IOS */,
 				8DA0C9FB2176313000DC868E /* Products */,
+				8DA0CA0F217631FE00DC868E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +99,35 @@
 		8DA0C9FC2176313000DC868E /* parte3IOS */ = {
 			isa = PBXGroup;
 			children = (
+				8D469A28217777F2000D69CD /* VideoController */,
 				8DA0C9FD2176313000DC868E /* AppDelegate.swift */,
 				8DA0C9FF2176313000DC868E /* ViewController.swift */,
 				8DA0CA012176313000DC868E /* Main.storyboard */,
 				8DA0CA042176313400DC868E /* Assets.xcassets */,
 				8DA0CA062176313400DC868E /* LaunchScreen.storyboard */,
 				8DA0CA092176313400DC868E /* Info.plist */,
+				8DA0CA1B2176365700DC868E /* OpenCVWrapper.h */,
+				8DA0CA1C2176365700DC868E /* OpenCVWrapper.mm */,
+				8DA0CA1A2176365700DC868E /* parte3IOS-Bridging-Header.h */,
+				8DA0CA1E2176375400DC868E /* PrefixHeader.pch */,
+				8D0F70B7217CE61D00741160 /* ViewAnimator.swift */,
+				8D0F70B9217CEA2500741160 /* MenuViewController.swift */,
+				8D0F70BA217CEA2500741160 /* MenuViewController.xib */,
 			);
 			path = parte3IOS;
+			sourceTree = "<group>";
+		};
+		8DA0CA0F217631FE00DC868E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D469A352178A34B000D69CD /* AVFoundation.framework */,
+				8DA0CA182176341100DC868E /* Accelerate.framework */,
+				8DA0CA162176340D00DC868E /* CoreFoundation.framework */,
+				8DA0CA14217633FF00DC868E /* CoreGraphics.framework */,
+				8DA0CA12217633F400DC868E /* CoreMedia.framework */,
+				8DA0CA10217631FF00DC868E /* opencv2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +162,7 @@
 				TargetAttributes = {
 					8DA0C9F92176313000DC868E = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -124,6 +191,8 @@
 			files = (
 				8DA0CA082176313400DC868E /* LaunchScreen.storyboard in Resources */,
 				8DA0CA052176313400DC868E /* Assets.xcassets in Resources */,
+				8D0F70BC217CEA2500741160 /* MenuViewController.xib in Resources */,
+				8D469A2D2177780F000D69CD /* VideoViewController.xib in Resources */,
 				8DA0CA032176313000DC868E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +204,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D0F70B8217CE61D00741160 /* ViewAnimator.swift in Sources */,
+				8D0F70BB217CEA2500741160 /* MenuViewController.swift in Sources */,
 				8DA0CA002176313000DC868E /* ViewController.swift in Sources */,
 				8DA0C9FE2176313000DC868E /* AppDelegate.swift in Sources */,
+				8D469A2C2177780F000D69CD /* VideoViewController.mm in Sources */,
+				8DA0CA1D2176365700DC868E /* OpenCVWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXG58UK739;
+				FRAMEWORK_SEARCH_PATHS = "/Users/lauracorssac/opencv-opencv-e7c915a/platforms/ios/ios";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/parte3IOS/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = parte3IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -289,6 +366,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Laura-Corssac.parte3IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "parte3IOS/parte3IOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +377,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXG58UK739;
+				FRAMEWORK_SEARCH_PATHS = "/Users/lauracorssac/opencv-opencv-e7c915a/platforms/ios/ios";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/parte3IOS/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = parte3IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +390,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Laura-Corssac.parte3IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "parte3IOS/parte3IOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
