@@ -11,6 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var photoContainerView: UIView!
     @IBOutlet weak var headerView: UIView!
@@ -32,7 +33,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.image = OpenCVWrapper.gaussianBlur(#imageLiteral(resourceName: "gigio"))
+        self.slider.maximumValue = 40
+        self.slider.minimumValue = 0
+        self.slider.isContinuous = false
+        self.slider.value = 0
+        
+        //self.imageView.image = OpenCVWrapper.gaussianBlur(#imageLiteral(resourceName: "gigio"))
         configureSession()
         viewAnimator = ViewAnimator(mainView: self.view, viewToTap: headerView, heightConstraint: containerHeightConstraint)
         presentMenuVC()
@@ -153,7 +159,8 @@ class ViewController: UIViewController {
         case .canny:
             newImage = OpenCVWrapper.canny(image)
         case .gaussianBlur:
-            newImage = OpenCVWrapper.gaussianBlur(image)
+            //newImage = OpenCVWrapper.gaussianBlur(image, slider: slider.value)
+            break
         case .rotate:
             newImage = OpenCVWrapper.rotate(image)
         case .scale:
@@ -178,8 +185,8 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         let image = UIImage(cgImage: cgImage)
         
         //display(image: image)
-        DispatchQueue.main.async { [unowned self] in
-            self.imageView.image = OpenCVWrapper.resize(image)
+        DispatchQueue.main.async { [weak self] in
+            self?.imageView.image = OpenCVWrapper.gaussianBlur(image, slider: Int32(self?.slider.value ?? 0))
         }
     }
     

@@ -16,7 +16,7 @@
 + (NSString *)openCVVersionString;
 + (UIImage *)toGray:(UIImage *)source;
 + (UIImage *)imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer;
-+ (UIImage *)gaussianBlur:(UIImage *)source;
++ (UIImage *)gaussianBlur:(UIImage *)source slider: (int)slider;
 + (UIImage *)sobel:(UIImage *)source;
 + (UIImage *)canny:(UIImage *)source;
 + (UIImage *)brightness:(UIImage *)source beta: (double)beta;

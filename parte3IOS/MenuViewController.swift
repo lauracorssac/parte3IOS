@@ -19,6 +19,9 @@ class MenuViewController: UIViewController {
     
     weak var delegate: ControlVCDelegate?
     
+    //@IBOutlet weak private var slider: UISlider!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -43,6 +43,9 @@
                                     <constraint firstAttribute="height" constant="40" id="QxB-78-sVg"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Liw-bE-x1c">
+                                <rect key="frame" x="9" y="318.5" width="356" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -50,9 +53,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="whx-fW-e5a" secondAttribute="bottom" constant="40" id="28C-Kz-B3v"/>
                             <constraint firstItem="whx-fW-e5a" firstAttribute="width" secondItem="W2r-cw-Mat" secondAttribute="width" id="38n-Vv-CW9"/>
                             <constraint firstItem="whx-fW-e5a" firstAttribute="centerX" secondItem="W2r-cw-Mat" secondAttribute="centerX" id="3ih-bI-4dt"/>
+                            <constraint firstItem="Liw-bE-x1c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Qg-Uc-T4w"/>
                             <constraint firstItem="whx-fW-e5a" firstAttribute="height" secondItem="W2r-cw-Mat" secondAttribute="height" id="Ia1-2R-utf"/>
                             <constraint firstItem="Xai-dK-Rzf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wbr-MJ-Xc2"/>
+                            <constraint firstItem="Liw-bE-x1c" firstAttribute="width" secondItem="W2r-cw-Mat" secondAttribute="width" id="WuU-Xj-WPI"/>
                             <constraint firstItem="W2r-cw-Mat" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X9Q-Jp-waF"/>
+                            <constraint firstItem="Liw-bE-x1c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XIL-4e-tcn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xai-dK-Rzf" secondAttribute="trailing" id="fal-1a-zKp"/>
                             <constraint firstItem="Xai-dK-Rzf" firstAttribute="top" secondItem="Dch-dO-1GZ" secondAttribute="bottom" id="iNg-Cc-MfI"/>
                             <constraint firstItem="W2r-cw-Mat" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oJq-Fk-Gfp"/>
@@ -67,6 +73,7 @@
                         <outlet property="imageView" destination="whx-fW-e5a" id="dlE-cI-JWY"/>
                         <outlet property="menuContainerView" destination="Xai-dK-Rzf" id="J2f-Go-90y"/>
                         <outlet property="photoContainerView" destination="W2r-cw-Mat" id="Q2m-6N-bSM"/>
+                        <outlet property="slider" destination="Liw-bE-x1c" id="wnf-yx-RgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

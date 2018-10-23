@@ -22,7 +22,7 @@ using namespace cv;
 + (Mat)_grayFrom:(Mat)source;
 + (Mat)_matFrom:(UIImage *)source;
 + (UIImage *)_imageFrom:(Mat)source;
-+ (Mat)_gaussianFrom:(Mat)source;
++ (Mat)_gaussianFrom:(Mat)source size: (int)size;
 + (Mat)_sobelFrom:(Mat)source;
 + (Mat)_cannyFrom:(Mat)source;
 + (Mat)_adjustFrom:(Mat)source alpha: (double)alpha beta: (double) beta;
@@ -138,8 +138,9 @@ using namespace cv;
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _grayFrom: [OpenCVWrapper _matFrom: source]]];
 }
 
-+ (UIImage *)gaussianBlur:(UIImage *)source {
-    return [OpenCVWrapper _imageFrom: [OpenCVWrapper _gaussianFrom: [OpenCVWrapper _matFrom: source]]];
++ (UIImage *)gaussianBlur:(UIImage *)source slider:(int)slider {
+    int size = 2 * slider + 1;
+    return [OpenCVWrapper _imageFrom: [OpenCVWrapper _gaussianFrom: [OpenCVWrapper _matFrom: source] size: size]];
 }
 + (UIImage *)canny:(UIImage *)source {
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _cannyFrom: [OpenCVWrapper _matFrom: source]]];
@@ -179,13 +180,12 @@ using namespace cv;
     
 }
 
-+ (Mat)_gaussianFrom:(Mat)source {
-    
++ (Mat)_gaussianFrom:(Mat)source size:(int)size {
     
     //Mat result;
     //kernel = cv::getGaussianKernel(45, 0);
-    cv::filter2D(source, result, -1, kernel);
-    //cv::GaussianBlur(source, result, cv::Size(45,45), 0);
+    //double sigma = 0.3 *((size - 1)*0.5 - 1) + 0.8;
+    cv::blur(source, result, cv::Size(size, size));
    // source.release();
     
     
@@ -223,7 +223,7 @@ using namespace cv;
     return result;
 }
 + (Mat)_rotate:(Mat)source {
-    
+   
     cv::rotate(source, result, ROTATE_90_CLOCKWISE);
     return result;
 }
