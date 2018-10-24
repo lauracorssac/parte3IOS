@@ -25,9 +25,10 @@ using namespace cv;
 + (Mat)_gaussianFrom:(Mat)source size: (int)size;
 + (Mat)_sobelFrom:(Mat)source;
 + (Mat)_cannyFrom:(Mat)source;
-+ (Mat)_adjustFrom:(Mat)source alpha: (double)alpha beta: (double) beta;
++ (Mat)_adjustFrom:(Mat)source alpha: (double)alpha beta: (int) beta;
 + (Mat)_flip:(Mat)source horizontal: (BOOL)horizontal vertical: (BOOL) vertical;
 + (Mat)_rotate:(Mat)source;
++ (Mat)_resize:(Mat)source size: (cv::Size)size;
 
 #endif
 
@@ -148,7 +149,7 @@ using namespace cv;
 + (UIImage *)sobel:(UIImage *)source {
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _sobelFrom: [OpenCVWrapper _matFrom: source]]];
 }
-+ (UIImage *)brightness:(UIImage *)source beta: (double)beta {
++ (UIImage *)brightness:(UIImage *)source beta: (int)beta {
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _adjustFrom: [OpenCVWrapper _matFrom: source] alpha:1 beta:beta]];
 }
 + (UIImage *)contrast:(UIImage *)source alpha: (double)alpha {
@@ -166,14 +167,13 @@ using namespace cv;
 + (UIImage *)rotate:(UIImage *)source {
     return [OpenCVWrapper _imageFrom: [OpenCVWrapper _rotate: [OpenCVWrapper _matFrom:source]]];
 }
-+ (UIImage *)resize:(UIImage *)source {
-    return [OpenCVWrapper _imageFrom: [OpenCVWrapper _resize: [OpenCVWrapper _matFrom:source]]];
++ (UIImage *)resize:(UIImage *)source size: (CGSize)size {
+    cv::Size cvSize = cv::Size(size.width, size.height);
+    return [OpenCVWrapper _imageFrom: [OpenCVWrapper _resize: [OpenCVWrapper _matFrom:source] size: cvSize]];
 }
 
 + (Mat)_grayFrom:(Mat)source {
    
-
-    //Mat result;
     cvtColor(source, result, COLOR_BGR2GRAY);
 
     return result;
@@ -182,12 +182,13 @@ using namespace cv;
 
 + (Mat)_gaussianFrom:(Mat)source size:(int)size {
     
-    //Mat result;
-    //kernel = cv::getGaussianKernel(45, 0);
-    //double sigma = 0.3 *((size - 1)*0.5 - 1) + 0.8;
-    cv::blur(source, result, cv::Size(size, size));
-   // source.release();
+    //uncomment the next 2 lines and comment the 4th in case you wanna see memory leaking
     
+    //double sigma = 0.3 *((size - 1)*0.5 - 1) + 0.8;
+    //cv::GaussianBlur(source, result, cv::Size(size, size), sigma);
+    
+    
+    cv::blur(source, result, cv::Size(size, size));
     
     return result;
 }
@@ -205,7 +206,7 @@ using namespace cv;
     
     return result;
 }
-+ (Mat)_adjustFrom:(Mat)source alpha: (double)alpha beta: (double) beta {
++ (Mat)_adjustFrom:(Mat)source alpha: (double)alpha beta: (int) beta {
     
     source.convertTo( result, -1, alpha, beta);
     
@@ -227,9 +228,9 @@ using namespace cv;
     cv::rotate(source, result, ROTATE_90_CLOCKWISE);
     return result;
 }
-+ (Mat)_resize:(Mat)source {
++ (Mat)_resize:(Mat)source size: (cv::Size)size {
     
-    cv::resize(source, result, cv::Size(source.size[0] / 2, source.size[1]/ 2));
+    cv::resize(source, result, size);
     return result;
 }
 

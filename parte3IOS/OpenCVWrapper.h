@@ -19,12 +19,12 @@
 + (UIImage *)gaussianBlur:(UIImage *)source slider: (int)slider;
 + (UIImage *)sobel:(UIImage *)source;
 + (UIImage *)canny:(UIImage *)source;
-+ (UIImage *)brightness:(UIImage *)source beta: (double)beta;
++ (UIImage *)brightness:(UIImage *)source beta: (int)beta;
 + (UIImage *)contrast:(UIImage *)source alpha: (double)alpha;
 + (UIImage *)negative:(UIImage *)source;
 + (UIImage *)flipVertical:(UIImage *)source;
 + (UIImage *)flipHorizontal:(UIImage *)source;
 + (UIImage *)rotate:(UIImage *)source;
-+ (UIImage *)resize:(UIImage *)source;
++ (UIImage *)resize:(UIImage *)source size: (CGSize)size;
 
 @end
