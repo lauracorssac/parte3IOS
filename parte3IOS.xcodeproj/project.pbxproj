@@ -10,8 +10,6 @@
 		8D0F70B8217CE61D00741160 /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F70B7217CE61D00741160 /* ViewAnimator.swift */; };
 		8D0F70BB217CEA2500741160 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0F70B9217CEA2500741160 /* MenuViewController.swift */; };
 		8D0F70BC217CEA2500741160 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0F70BA217CEA2500741160 /* MenuViewController.xib */; };
-		8D469A2C2177780F000D69CD /* VideoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D469A2A2177780F000D69CD /* VideoViewController.mm */; };
-		8D469A2D2177780F000D69CD /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D469A2B2177780F000D69CD /* VideoViewController.xib */; };
 		8D469A362178A34B000D69CD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D469A352178A34B000D69CD /* AVFoundation.framework */; };
 		8DA0C9FE2176313000DC868E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C9FD2176313000DC868E /* AppDelegate.swift */; };
 		8DA0CA002176313000DC868E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C9FF2176313000DC868E /* ViewController.swift */; };
@@ -30,9 +28,6 @@
 		8D0F70B7217CE61D00741160 /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
 		8D0F70B9217CEA2500741160 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8D0F70BA217CEA2500741160 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		8D469A292177780F000D69CD /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
-		8D469A2A2177780F000D69CD /* VideoViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoViewController.mm; sourceTree = "<group>"; };
-		8D469A2B2177780F000D69CD /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		8D469A352178A34B000D69CD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8DA0C9FA2176313000DC868E /* parte3IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parte3IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DA0C9FD2176313000DC868E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,16 +64,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8D469A28217777F2000D69CD /* VideoController */ = {
-			isa = PBXGroup;
-			children = (
-				8D469A292177780F000D69CD /* VideoViewController.h */,
-				8D469A2A2177780F000D69CD /* VideoViewController.mm */,
-				8D469A2B2177780F000D69CD /* VideoViewController.xib */,
-			);
-			path = VideoController;
-			sourceTree = "<group>";
-		};
 		8DA0C9F12176313000DC868E = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +84,6 @@
 		8DA0C9FC2176313000DC868E /* parte3IOS */ = {
 			isa = PBXGroup;
 			children = (
-				8D469A28217777F2000D69CD /* VideoController */,
 				8DA0C9FD2176313000DC868E /* AppDelegate.swift */,
 				8DA0C9FF2176313000DC868E /* ViewController.swift */,
 				8DA0CA012176313000DC868E /* Main.storyboard */,
@@ -192,7 +176,6 @@
 				8DA0CA082176313400DC868E /* LaunchScreen.storyboard in Resources */,
 				8DA0CA052176313400DC868E /* Assets.xcassets in Resources */,
 				8D0F70BC217CEA2500741160 /* MenuViewController.xib in Resources */,
-				8D469A2D2177780F000D69CD /* VideoViewController.xib in Resources */,
 				8DA0CA032176313000DC868E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +191,6 @@
 				8D0F70BB217CEA2500741160 /* MenuViewController.swift in Sources */,
 				8DA0CA002176313000DC868E /* ViewController.swift in Sources */,
 				8DA0C9FE2176313000DC868E /* AppDelegate.swift in Sources */,
-				8D469A2C2177780F000D69CD /* VideoViewController.mm in Sources */,
 				8DA0CA1D2176365700DC868E /* OpenCVWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
