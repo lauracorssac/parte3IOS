@@ -8,65 +8,41 @@
 
 import UIKit
 
-enum MenuOption {
-    case contrast, negative, brightness, original, flipVertical, flipHorizontal, grayScale, startRecording, stopRecording, sobel, canny, gaussianBlur, rotate, scale
+enum MenuOption: Int {
+    case contrast = 0
+    case negative = 1
+    case brightness = 2
+    case flipVertical = 4
+    case flipHorizontal = 5
+    case grayScale = 6
+    case startRecording = 7
+    case sobel = 9
+    case canny = 10
+    case gaussianBlur = 11
+    case rotate = 12
+    case scale = 13
 }
 protocol ControlVCDelegate: class {
     func didSelect(option: MenuOption)
+    func didDeselect(option: MenuOption)
 }
 
 class MenuViewController: UIViewController {
     
     weak var delegate: ControlVCDelegate?
     
-    //@IBOutlet weak private var slider: UISlider!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    @IBAction func negative(_ sender: Any) {
-        delegate?.didSelect(option: .negative)
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if sender.isSelected {
+            delegate?.didDeselect(option: MenuOption(rawValue: sender.tag)!)
+        } else {
+            delegate?.didSelect(option: MenuOption(rawValue: sender.tag)!)
+        }
+        sender.isSelected = !sender.isSelected
     }
-    @IBAction func flipHor(_ sender: UIButton) {
-        delegate?.didSelect(option: .flipHorizontal)
-    }
-    @IBAction func flipVer(_ sender: Any) {
-        delegate?.didSelect(option: .flipVertical)
-    }
-    @IBAction func contrast(_ sender: Any) {
-        delegate?.didSelect(option: .contrast)
-    }
-    @IBAction func brightness(_ sender: Any) {
-        delegate?.didSelect(option: .brightness)
-    }
-    @IBAction func grayScale(_ sender: Any) {
-        delegate?.didSelect(option: .grayScale)
-    }
-    @IBAction func gaussianBlur(_ sender: Any) {
-        delegate?.didSelect(option: .gaussianBlur)
-    }
-    @IBAction func sobel(_ sender: Any) {
-        delegate?.didSelect(option: .sobel)
-    }
-    @IBAction func canny(_ sender: Any) {
-        delegate?.didSelect(option: .canny)
-    }
-    @IBAction func start(_ sender: Any) {
-        delegate?.didSelect(option: .startRecording)
-    }
-    @IBAction func stop(_ sender: Any) {
-        delegate?.didSelect(option: .stopRecording)
-    }
-    @IBAction func scale(_ sender: Any) {
-        delegate?.didSelect(option: .scale)
-    }
-    @IBAction func rotate(_ sender: Any) {
-        delegate?.didSelect(option: .rotate)
-    }
-    @IBAction func original(_ sender: Any) {
-        delegate?.didSelect(option: .original)
-    }
-    
 }
+    
+
